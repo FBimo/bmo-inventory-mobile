@@ -115,7 +115,7 @@ Saya menambahkan atribut `color` untuk setiap tombol sehingga apabila tombol tel
     }
     ```
 
-2. Inisiasi warna
+2. Inisialisasi warna
     ```
     final List<Feature> items = [
         Feature("Lihat Item", Icons.checklist, Colors.blue),
