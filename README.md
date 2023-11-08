@@ -84,12 +84,12 @@ Tugas 7
 
 ## B. Pertanyaan
 #### Perbedaan _Stateless_ dan _Stateful Widget_
-_Stateless widget_ merupakan _widget_ statis yang berarti _widget_ tersebut tidak berubah atau dapat dikatakan tidak akan ada perubahan tampilan pada _ouput_ jika proses pengeluaran _output_ tidak dihentikan dan kode _output_ tidak dimodifikasi. Sementara itu, _stateful widget_ merupakan _widget_ dinamis yang dapat merubah tampilannya sesuai respons dari _events_ yang dipicu baik dari interaksi _user_ maupun adanya variabel atau nilai baru yang didapat.
+_Stateless widget_ merupakan _widget_ statis yang berarti _widget_ tersebut tidak berubah atau dapat dikatakan tidak akan ada perubahan tampilan pada _output_ jika proses pengeluaran _output_ tidak dihentikan dan kode _output_ tidak dimodifikasi. Sementara itu, _stateful widget_ merupakan _widget_ dinamis yang dapat merubah tampilannya sesuai respons dari _events_ yang dipicu baik dari interaksi _user_ maupun adanya variabel atau nilai baru yang didapat.
 
 #### _Widgets_
 | No. | Widget | Fungsi |
 |:--- |:---:|:---:|
-| 1. |`Scaffold`|memberikan tema material yang menjadi dasar dari tampilan|
+| 1. |`Scaffold`|Mengimplementasi desain dasar material sebagai struktur awal tata letak visual|
 | 2. |`AppBar`|Kontainer yang menampilkan konten beserta fiturnya pada bagian atas|
 | 3. | `Text`|Menampilkan teks|
 | 4. | `Column`|Menampilkan _children_ secara vertikal| 
@@ -101,4 +101,45 @@ _Stateless widget_ merupakan _widget_ statis yang berarti _widget_ tersebut tida
 | 10.| `Center`|Pengaturan posisi di tengah dengan _child_-nya sendiri|
 | 11.| `Theme`|Pengaturan awal untuk tema aplikasi|
 
+## C. Bonus
+Saya menambahkan atribut `color` untuk setiap tombol sehingga apabila tombol telah diiterasi, tombol akan memiliki warnanya masing-masing.
+
+1. Penambahan atribut `color`
+    ```
+    class Feature {
+        final String name;
+        final IconData icon;
+        final MaterialColor color;
+
+        Feature(this.name, this.icon, this.color);
+    }
+    ```
+
+2. Inisiasi warna
+    ```
+    final List<Feature> items = [
+        Feature("Lihat Item", Icons.checklist, Colors.blue),
+        Feature("Tambah Item", Icons.add_shopping_cart, Colors.green),
+        Feature("Logout", Icons.logout, Colors.red),
+    ];
+    ```
+
+3. Pemanggilan warna
+    ```
+    class FeatureCard extends StatelessWidget {
+        final Feature item;
+
+        const FeatureCard(this.item, {super.key}); // Constructor
+
+        @override
+        Widget build(BuildContext context) {
+            return Material(
+            color: item.color,
+
+            ...
+
+            );
+        }
+    }
+    ```
 </details>
