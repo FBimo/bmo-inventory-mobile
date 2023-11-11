@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+// Impor drawer widget
+import 'package:bmo_inventory/widgets/left_drawer.dart';
+import 'package:bmo_inventory/itemlist_form.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key:key);
@@ -25,7 +28,11 @@ class MyHomePage extends StatelessWidget {
         title: const Text(
           'Bmo Inventory',
         ),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
+      // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(
@@ -72,8 +79,6 @@ class FeatureCard extends StatelessWidget {
 
   const FeatureCard(this.item, {super.key}); // Constructor
 
-
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -86,6 +91,16 @@ class FeatureCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
+          // Navigate ke route yang sesuai (tergantung jenis tombol)
+          if (item.name == "Tambah Item") {
+          // TODO: Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup ShopFormPage.
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ItemFormPage(),
+            )
+          );
+          }
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
