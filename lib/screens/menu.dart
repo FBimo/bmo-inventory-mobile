@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+// Impor drawer widget
+import 'package:bmo_inventory/widgets/left_drawer.dart';
+import 'package:bmo_inventory/widgets/feature_card.dart';
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key:key);
+  MyHomePage({Key? key}) : super(key: key);
 
   final List<Feature> items = [
-    Feature("Lihat Item", Icons.checklist, Colors.blue),
-    Feature("Tambah Item", Icons.add_shopping_cart, Colors.green),
+    Feature("Item List", Icons.checklist, Colors.blue),
+    Feature("Add Item", Icons.add_shopping_cart, Colors.green),
     Feature("Logout", Icons.logout, Colors.red),
   ];
 
@@ -25,7 +28,11 @@ class MyHomePage extends StatelessWidget {
         title: const Text(
           'Bmo Inventory',
         ),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
+      // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(
@@ -65,59 +72,4 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
-}
-
-class FeatureCard extends StatelessWidget {
-  final Feature item;
-
-  const FeatureCard(this.item, {super.key}); // Constructor
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: item.color,
-      child: InkWell(
-        // Area responsive terhadap sentuhan
-        onTap: () {
-          // Memunculkan SnackBar ketika diklik
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(SnackBar(
-                content: Text("Kamu telah menekan tombol ${item.name}!")));
-        },
-        child: Container(
-          // Container untuk menyimpan Icon dan Text
-          padding: const EdgeInsets.all(8),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30.0,
-                ),
-                const Padding(padding: EdgeInsets.all(3)),
-                Text(
-                  item.name,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Feature {
-  final String name;
-  final IconData icon;
-  final MaterialColor color;
-
-  Feature(this.name, this.icon, this.color);
 }
