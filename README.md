@@ -176,7 +176,7 @@ Tugas 8
         ...
     }
     ```
-    > - `_formkey` berguna sebagai variabel yang berfungsi sebagai _handler form state_, validasi formulir, dan penyimpanan formulir.
+    - `_formkey` berguna sebagai variabel yang berfungsi sebagai _handler form state_, validasi formulir, dan penyimpanan formulir.
     - `_name`, `_amount`, dan `_description` berfungsi sebagai variabel yang menyimpan input dari masing-masing _field_.
 
 3. Selanjutnya saya membuat _widget_ `Scaffold` sebagai pondasi `ItemFormPage` di bawah inisialisasi variabel `_description`,
@@ -200,7 +200,7 @@ Tugas 8
         );
     }
     ```
-    > - `AppBar` berguna sebagai komponen bagian atas di suatu halaman atau _screen_.
+    - `AppBar` berguna sebagai komponen bagian atas di suatu halaman atau _screen_.
     - `drawer` berguna untuk menambahkan _drawer_ sebagai navigasi aplikasi yang akan dibuat nantinya.
 
 4. Setelah itu, saya membuat _widget_ `body` berupa `Form` tepat setelah `drawer` dengan kode berikut,
@@ -216,7 +216,7 @@ Tugas 8
         ),
     ),
     ```
-    > - Atribut `key` akan berfungsi sebagai _handler_ dari _form state_, validasi _form_, dan penyimpanan _form_.
+    - Atribut `key` akan berfungsi sebagai _handler_ dari _form state_, validasi _form_, dan penyimpanan _form_.
     - _Widget_ `SingleChildScrollView` berfungsi untuk membuat _child_ _widget_ di dalamnya agar dapat di-_scroll_.
     - `crossAxisAlignment` berguna untuk mengatur _alignment_ `children` dari `Column`.
 
@@ -271,7 +271,7 @@ Tugas 8
         ),
     ),
     ```
-    > - Kode untuk memunculkan notifikasi dapat dilihat pada bagian [ini](#pembuatan-notifikasi-penambahan-barang)
+    - Kode untuk memunculkan notifikasi dapat dilihat pada bagian [ini](#pembuatan-notifikasi-penambahan-barang)
     - `padding` berguna sebagai pengatur jarak komponen dari sisi dalam.
     - `TextFormField` kolom untuk melakukan _input_ formulir.
     - `onChanged` akan dijalankan setiap ada perubahan isi `TextFormField`.
@@ -296,7 +296,7 @@ Tugas 8
 
     ...
     ```
-    > _Widget_ `Navigator` untuk melakukan perpindahan halaman pada aplikasi. 
+    > _Widget_ `Navigator` berguna untuk melakukan perpindahan halaman pada aplikasi. 
 
 ### Pembuatan Notifikasi Penambahan Barang
 1. Berikut kode untuk membuat notifikasi bahwa barang berhasil disimpan,
@@ -332,7 +332,7 @@ Tugas 8
         },
     );
     ```
-    > - `showDialog` memunculkan notifikasi seperti _pop up message_ jika penambahan menggunakan formulir berhasil.
+    > `showDialog` memunculkan notifikasi seperti _pop up message_ jika penambahan menggunakan formulir berhasil.
 
 ### Pembuatan _Drawer_ Aplikasi
 1. Pertama, saya membuat `DrawerHeader` sebagai komponen atas _drawer_,
@@ -414,7 +414,7 @@ Metode `Navigator.push()` digunakan jika kita ingin membiarkan pengguna kembali 
 
 #### Macam-Macam _Layout Widget_ pada Flutter
 | Nama _Widget_| Konteks Penggunaan|
-|:---:|:---|
+|:---|:---|
 |`Container`| Mengatur konten dalam kotak, menetapkan dekorasi, margin, padding, dan _constraints_. `Container` digunakan sebagai wadah umum untuk _widget_ lainnya.|
 |`Row` dan `Column`| Mengatur _widget_ secara horizontal (`Row`) atau vertikal (`Column`). _Widget_ ini berguna untuk menyusun _widget_ secara berurutan.|
 |`ListView`| Menampilkan daftar _widget_ dalam bentuk _list_. _Widget_ ini Mendukung daftar yang panjang atau tak terbatas.|
@@ -434,7 +434,7 @@ _Clean Architecture_ merupakan salah satu pendekatan dalam pengembangan aplikasi
 <br>
 
 |_File_|Penggunaan|Lokasi|
-|:---:|:---|:---:|
+|:---:|:---:|:---:|
 |`left_drawer.dart`, `feature_card.dart`|Berisi _widgets_ untuk mengakses halaman lain dalam aplikasi|`package:bmo_inventory/widgets/`|
 |`item_page.dart`, `itemlist_form.dart`, `menu.dart`|_Pages_ dalam aplikasi yang dapat diakses oleh pengguna|`package:bmo_inventory/screens/`|
 |`main.dart`|Berisi fungsi untuk menjalankan program keseluruhan|`package:bmo_inventory/`|
