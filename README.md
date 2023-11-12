@@ -83,10 +83,10 @@ Tugas 7
     ```
 
 ## B. Pertanyaan
-#### Perbedaan _Stateless_ dan _Stateful Widget_
+#### [x] Perbedaan _Stateless_ dan _Stateful Widget_
 _Stateless widget_ merupakan _widget_ statis yang berarti _widget_ tersebut tidak berubah atau dapat dikatakan tidak akan ada perubahan tampilan pada _output_ jika proses pengeluaran _output_ tidak dihentikan dan kode _output_ tidak dimodifikasi. Sementara itu, _stateful widget_ merupakan _widget_ dinamis yang dapat merubah tampilannya sesuai respons dari _events_ yang dipicu baik dari interaksi _user_ maupun adanya variabel atau nilai baru yang didapat.
 
-#### _Widgets_
+#### [x] _Widgets_
 | No. | Widget | Fungsi |
 |:--- |:---:|:---:|
 | 1. |`Scaffold`|Mengimplementasi desain dasar material sebagai struktur awal tata letak visual|
@@ -405,17 +405,17 @@ Tugas 8
 
 
 ## B. Pertanyaan
-#### Perbedaan `Navigator.push()` dan `Navigator.pushReplacement()`
+#### [x] Perbedaan `Navigator.push()` dan `Navigator.pushReplacement()`
 Perbedaan kedua _method_ tersebut terletak pada apa yang dilakukan kepada _route_ yang berada pada atas _stack_. `Navigator.push()` akan menambahkan _route_ baru diatas _route_ yang sudah ada pada atas _stack_. Sementara itu, `Navigator.pushReplacement()` menggantikan _route_ yang sudah ada pada atas _stack_ dengan _route_ baru tersebut.
 
 <br>
 
-Metode `Navigator.push()` digunakan jika kita ingin membiarkan pengguna kembali ke layar sebelumnya dengan menekan tombol _back_ di perangkat. Misalnya, ketika kita ingin menunjukkan halaman detail dan memberi pengguna kemampuan untuk kembali ke halaman utama. Sementara itu, metode `Navigator.pushReplacement()` digunakan jika kita ingin menggantikan layar saat ini dengan layar baru dan tidak ingin pengguna dapat kembali ke layar sebelumnya. Misalnya, setelah pengguna melakukan _login_.
+Metode `Navigator.push()` digunakan jika kita ingin membiarkan pengguna kembali ke layar sebelumnya dengan menekan tombol _back_ di perangkat. Misalnya, ketika kita ingin menunjukkan halaman _detail_ dan memberi pengguna kemampuan untuk kembali ke halaman utama. Sementara itu, metode `Navigator.pushReplacement()` digunakan jika kita ingin menggantikan layar saat ini dengan layar baru dan tidak ingin pengguna dapat kembali ke layar sebelumnya. Misalnya, setelah pengguna melakukan _login_.
 
-#### Macam-Macam _Layout Widget_ pada Flutter
+#### [x] Macam-Macam _Layout Widget_ pada Flutter
 | Nama _Widget_| Konteks Penggunaan|
 |:---|:---|
-|`Container`| Mengatur konten dalam kotak, menetapkan dekorasi, margin, padding, dan _constraints_. `Container` digunakan sebagai wadah umum untuk _widget_ lainnya.|
+|`Container`| Mengatur konten dalam kotak, menetapkan dekorasi, _margin_, _padding_, dan _constraints_. `Container` digunakan sebagai wadah umum untuk _widget_ lainnya.|
 |`Row` dan `Column`| Mengatur _widget_ secara horizontal (`Row`) atau vertikal (`Column`). _Widget_ ini berguna untuk menyusun _widget_ secara berurutan.|
 |`ListView`| Menampilkan daftar _widget_ dalam bentuk _list_. _Widget_ ini Mendukung daftar yang panjang atau tak terbatas.|
 |`Expanded`| Memperluas (`Expanded`) atau menyesuaikan (`Flexible`) ruang yang tersedia dalam _widget parent_, digunakan dalam `Row` atau `Column`.|
@@ -425,10 +425,10 @@ Metode `Navigator.push()` digunakan jika kita ingin membiarkan pengguna kembali 
 |`GridView`| Menyusun _widget_ dalam bentuk _grid_, mendukung penempatan _widget_ dalam baris dan kolom.|
 |`Wrap`| Menyusun _widget_ dalam baris atau kolom, membalikkan baris jika perlu. _Widget_ ini Berguna untuk mengelola ukuran _widget_ yang bervariasi.|
 
-#### Elemen Input pada Formulir
+#### [x] Elemen Input pada Formulir
 Elemen input yang saya gunakan dalam tugas kali ini adalah `name` sebagai nama barang dengan tipe `String`, `amount` sebagai jumlah barang yang ada dengan tipe `Integer`, dan `description` sebagai deskripsi rinci dari barang dengan tipe `String`. Saya memilih ketiga elemen tersebut karena elemen-elemen tersebut merupakan `field` dasar yang dapat mencakup informasi-informasi pokok dari setiap barang sehingga cukup mudah dan fleksibel dalam pengembangannya. 
 
-#### Penerapan _Clean Architecture_ pada Aplikasi Flutter
+#### [x] Penerapan _Clean Architecture_ pada Aplikasi Flutter
 _Clean Architecture_ merupakan salah satu pendekatan dalam pengembangan aplikasi dengan melakukan pemisahan komponen dengan kriteria atau tugas-tugas tertentu untuk membuat struktur yang teratur dan mudah baik dalam pengelolaan maupun pengujian. Dalam tugas Flutter kali ini, saya menerapkan _clean architecture_ yang sederhana agar struktur aplikasi dapat terorganisir dengan baik.
 
 <br>
