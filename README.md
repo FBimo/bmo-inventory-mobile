@@ -471,7 +471,7 @@ Tugas 9
 - [x] Saya membuat metode _view_ pada `authentication/views.py` dan tidak lupa untuk menambahkannya _routing_-nya pada `authentication/urls.py` dan `marpellus_cenep/urls.py`.
 - [x] Pada aplikasi Flutter, saya mengunduh beberapa modul yang dibutuhkan untuk pengintegrasian, seperti `provider` dan `pbp_django_auth`.
 - [x] Saya memodifikasi _root widget_ untuk menyediakan `CookieRequest` _library_ ke seluruh _child widgets_ menggunakan `Provider`.
-- [x] Saya membuat halaman _login_ sebagai autentikasi pengguna aplikasi, rinciannya dapat dilihat di [sini.](#pembuatan-halaman-_login_).
+- [x] Saya membuat halaman _login_ sebagai autentikasi pengguna aplikasi, rinciannya dapat dilihat di [sini.](#pembuatan-halaman-login).
 
 ### Pembuatan Model Kustom
 - [x] Untuk membuat model kustom, saya menggunakan struktur data JSON yang sudah pernah dibuat pada aplikasi _web_.
