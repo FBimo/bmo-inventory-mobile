@@ -448,7 +448,7 @@ _Clean Architecture_ merupakan salah satu pendekatan dalam pengembangan aplikasi
 
 <details>
 <summary> 
-Tugas 8
+Tugas 9
 </summary>
 
 <br>
@@ -456,11 +456,11 @@ Tugas 8
 # Tugas 9 PBP 2023
 ## A. Implementasi _Checklist_
 ### _Deployment_ Proyek Tugas Django
-(insert gambar)
+![image](https://github.com/FBimo/bmo-inventory-mobile/assets/119420957/80301424-89e5-4d1b-af33-3842a82da921)
 
 ### Pembuatan Halaman _Login_
 - [x] Saya membuat file baru pada folder `screens` dengan nama `login.dart`.
-- [x] Saya mengintegrasikan sistem autentikasi terlebih dahulu dengan Django agar halaman _login_ dapat bekerja. _Checklist_ pengintegrasian dapat dilihat di sini.
+- [x] Saya mengintegrasikan sistem autentikasi terlebih dahulu dengan Django agar halaman _login_ dapat bekerja. _Checklist_ pengintegrasian dapat dilihat di [sini.](#pengintegrasian-sistem-autentikasi-django)
 - [x] Pada bagian `MaterialApp(...)` pada `main.dart`, saya mengubah `home: MyHomePpage()` menjadi `home: LoginPage()` agar ketika pengguna menggunakan aplikasi, pengguna harus mengautentikasi dirinya terlebih dahulu.
 
 ### Pengintegrasian Sistem Autentikasi Django
@@ -471,7 +471,7 @@ Tugas 8
 - [x] Saya membuat metode _view_ pada `authentication/views.py` dan tidak lupa untuk menambahkannya _routing_-nya pada `authentication/urls.py` dan `marpellus_cenep/urls.py`.
 - [x] Pada aplikasi Flutter, saya mengunduh beberapa modul yang dibutuhkan untuk pengintegrasian, seperti `provider` dan `pbp_django_auth`.
 - [x] Saya memodifikasi _root widget_ untuk menyediakan `CookieRequest` _library_ ke seluruh _child widgets_ menggunakan `Provider`.
-- [x] Saya membuat halaman _login_ sebagai autentikasi pengguna aplikasi, rinciannya dapat dilihat di sini.
+- [x] Saya membuat halaman _login_ sebagai autentikasi pengguna aplikasi, rinciannya dapat dilihat di [sini.](#pembuatan-halaman-_login_).
 
 ### Pembuatan Model Kustom
 - [x] Untuk membuat model kustom, saya menggunakan struktur data JSON yang sudah pernah dibuat pada aplikasi _web_.
@@ -485,7 +485,7 @@ Tugas 8
 
 ### Pembuatan Halaman Rincian untuk Seluruh Daftar Produk
 - [x] Dalam pembuatannya, saya menambahkan _widget_ `ElevatedButton()` yang dilengkapi dengan fungsi `onPressed: ()` dan `showDialog()` untuk menampilkan atribut-atribut dari produk.
-[x] Saya juga menambahkan tombol untuk kembali lagi ke daftar lengkap produk
+- [x] Saya juga menambahkan tombol untuk kembali lagi ke daftar lengkap produk
 
 ## B. Pertanyaan
 #### Pengambilan Data JSON Tanpa Pembuatan Model
