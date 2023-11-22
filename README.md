@@ -445,3 +445,94 @@ _Clean Architecture_ merupakan salah satu pendekatan dalam pengembangan aplikasi
 - [x] Membuat tombol baru pada _drawer_ dan _homepage_ yang akan mengarahkan pengguna untuk mengakses halaman Item List.
 
 </details>
+
+<details>
+<summary> 
+Tugas 8
+</summary>
+
+<br>
+
+# Tugas 9 PBP 2023
+## A. Implementasi _Checklist_
+### _Deployment_ Proyek Tugas Django
+(insert gambar)
+
+### Pembuatan Halaman _Login_
+- [x] Saya membuat file baru pada folder `screens` dengan nama `login.dart`.
+- [x] Saya mengintegrasikan sistem autentikasi terlebih dahulu dengan Django agar halaman _login_ dapat bekerja. _Checklist_ pengintegrasian dapat dilihat di sini.
+- [x] Pada bagian `MaterialApp(...)` pada `main.dart`, saya mengubah `home: MyHomePpage()` menjadi `home: LoginPage()` agar ketika pengguna menggunakan aplikasi, pengguna harus mengautentikasi dirinya terlebih dahulu.
+
+### Pengintegrasian Sistem Autentikasi Django
+- [x] Saya membuat `django-app` yang bernama `authentication`. _File_ ini digunakan untuk mengatur keperluan autentikasi Flutter-Django.
+- [x] Saya menambahkan juga _app_ yang baru saja dibuat ke `INSTALLED_APPS` pada _main project_ `settings.py`.
+- [x] Saya mengunduh `django-cors-headers`, menambahkannya pada `INSTALLED_APPS` _main project_ `settings.py`, dan menambahkan `corsheaders.middleware.CorsMiddleware` di `settings.py` yang sama pada bagian `MIDDLEWARE`.
+- [x] Saya juga menambahkan beberapa variabel yang dibutuhkan di `settings.py` yang sama.
+- [x] Saya membuat metode _view_ pada `authentication/views.py` dan tidak lupa untuk menambahkannya _routing_-nya pada `authentication/urls.py` dan `marpellus_cenep/urls.py`.
+- [x] Pada aplikasi Flutter, saya mengunduh beberapa modul yang dibutuhkan untuk pengintegrasian, seperti `provider` dan `pbp_django_auth`.
+- [x] Saya memodifikasi _root widget_ untuk menyediakan `CookieRequest` _library_ ke seluruh _child widgets_ menggunakan `Provider`.
+- [x] Saya membuat halaman _login_ sebagai autentikasi pengguna aplikasi, rinciannya dapat dilihat di sini.
+
+### Pembuatan Model Kustom
+- [x] Untuk membuat model kustom, saya menggunakan struktur data JSON yang sudah pernah dibuat pada aplikasi _web_.
+- [x] Contoh dari JSON _data_ yang ada akan disalin pada situs Quicktype.
+- [x] Kode yang di-_generate_ oleh Quicktype akan disalin lalu dipindahkan ke `lib/models/card.dart`.
+
+### Pembuatan Halaman yang Berisi Daftar Seluruh _Item_
+- [x] Agar dapat melakukan pengambilan data melalui internet, saya mengunduh modul `http` dan menambahkan kode _permission_ pada _file_ `android/app/src/main/AndroidManifest.xml`.
+- [x] Saya menambahkan _file_ `list_card.dart` pada `lib/screens` sebagai halaman untuk melihat seluruh daftar produk yang telah ditambahkan.
+- [x] Pada _file_ `list_card.dart`, saya menambahkan kode untuk melakukan pengambilan data JSON dan mengubahnya menjadi _object Product_ serta mengembalikannya dalam bentuk _list_ sehingga nantinya dapat diiterasikan.
+
+### Pembuatan Halaman Rincian untuk Seluruh Daftar Produk
+- [x] Dalam pembuatannya, saya menambahkan _widget_ `ElevatedButton()` yang dilengkapi dengan fungsi `onPressed: ()` dan `showDialog()` untuk menampilkan atribut-atribut dari produk.
+[x] Saya juga menambahkan tombol untuk kembali lagi ke daftar lengkap produk
+
+## B. Pertanyaan
+#### Pengambilan Data JSON Tanpa Pembuatan Model
+Hal ini tentu sangat mungkin dilakukan dan cukup fleksibel karena kita tidak perlu membuat model terlebih dahulu, namun cukup rentan akan beberapa hal, seperti kesalahan tipe data, kode menjadi kurang terbaca atau sulit dimengerti, dan performanya pun ikut menurun karena menggunakan deserialisasi dinamis yang cukup memakan lebih banyak sumber daya jika dibandingkan denagan adanya model yang sudah didefinisikan terlebih dahulu.
+
+#### Fungsi dari `CookieRequest`
+`CookieRequest` merupakan kelas yang digunakan untuk mengelola permintaan yang melibatkan manipulasi atau pengelolaan _cookie_ di level aplikasi. Biasanya `CookieRequest` perlu untuk dibagikan ke semua komponen aplikasi agar menjaga konsisten pengelolaan _cookie_, efisiensi memori, dan keperluan untuk _maintenance_ kode. 
+
+#### Mekanisme Pengambilan Data dari JSON
+- Menggunakan _package_ seperti http untuk membuat permintaan HTTP ke server atau API yang menyediakan data JSON.
+- Melakukan permintaan `GET` atau `POST` untuk mendapatkan data JSON.
+- Mengurai data JSON ke dalam struktur data yang sesuai dengan menggunakan fungsi `json.decode()`.
+- Menggunakan model Dart untuk menyimpan data yang diurai dari JSON.
+- Menggunakan _widget_ seperti `ListView` atau `GridView` untuk menampilkan data yang telah diurai ke dalam tampilan yang sesuai.
+- Menggunakan _widget_ `FutureBuilder` untuk menampilkan data yang diperoleh dari permintaan HTTP secara asinkron.
+
+#### Mekanisme Autentikasi dari _Input_ Data Akun pada Flutter ke Django
+- Mengimplementasikan _form_ di Flutter untuk mengambil informasi _login_ seperti _username_ dan _password_ dari pengguna.
+- Menggunakan _package_ http untuk membuat permintaan HTTP dari Flutter ke Django.
+- Mengirimkan data _login_ yang sudah dimasukkan oleh pengguna ke _endpoint_ autentikasi yang telah di Django.
+- Validasi data yang diterima dari permintaan dan mencocokkan dengan data yang ada di sistem autentikasi.
+- Jika autentikasi berhasil, akan ada token akses atau sesi yang dikirim kembali ke Flutter sebagai konfirmasi keberhasilan autentikasi
+- Jika autentikasi berhasil, tampilkan menu atau halaman yang sesuai kepada pengguna.
+
+#### Macam-Macam _Widget_ yang Digunakan pada Tugas 9
+
+| Nama _Widget_         | Fungsi                                                                                                 |
+|---------------------|--------------------------------------------------------------------------------------------------------|
+| `Scaffold`          | Memberikan kerangka dasar untuk tata letak halaman termasuk `appBar`, `drawer`, dan `body`.|
+| `AppBar`            | Menampilkan judul halaman dan berbagai aksi yang terkait dengan halaman.|
+| `Drawer`            | Menyediakan navigasi samping yang dapat diakses oleh pengguna untuk navigasi ke bagian lain aplikasi.|
+| `FutureBuilder`     | Mengelola `state` _Future_ dan membangun UI berdasarkan hasil dari `future`.|
+| `ListView.builder`  | Menampilkan daftar _item_ yang bisa digulirkan secara dinamis dengan memanfaatkan `builder` untuk efisiensi. |
+| `Container`         | _Widget_ pembungkus yang memungkinkan _styling_ seperti `border`, `padding`, dan lainnya.|
+| `Text`              | Menampilkan teks dengan gaya tertentu.|
+| `Align`             | Menyusun `widget-child` dalam kontainer secara tepat sesuai posisi yang diinginkan.|
+| `Padding`           | Menambahkan `padding` di sekeliling `widget-child`.|
+| `ElevatedButton`    | Tombol dengan gaya yang lebih menonjol, biasanya digunakan untuk aksi atau interaksi pengguna.|
+| `AlertDialog`       | Menampilkan dialog dengan pesan dan aksi tertentu.|
+| `TextButton`        | Tombol yang menampilkan teks tanpa latar belakang, biasanya digunakan untuk aksi sederhana.|
+| `Column`            | Mengatur anak-anaknya dalam kolom secara vertikal.|
+| `SingleChildScrollView` | Memungkinkan konten di dalamnya digulir tanpa membatasi tinggi kontennya.|
+| `SnackBar`               | Menampilkan pesan notifikasi yang muncul sementara di bagian bawah layar setelah _login_ berhasil.|
+| `showDialog`             | Menampilkan dialog untuk pesan kesalahan saat _login_ gagal.|
+| `AlertDialog`            | Menampilkan dialog dengan pesan error jika _login_ gagal.|
+| `TextButton`             | Tombol dalam dialog untuk menutup dialog error saat _login_ gagal.|
+| `TextEditingController`   | Mengendalikan _input field_ untuk _username_ dan _password_.|
+| `Provider`               | Memungkinkan akses ke `CookieRequest` yang digunakan untuk melakukan permintaan HTTP ke server untuk _login_.|
+
+</details>

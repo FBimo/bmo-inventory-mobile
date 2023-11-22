@@ -8,7 +8,7 @@ class MyHomePage extends StatelessWidget {
 
   final List<Feature> items = [
     Feature("Item List", Icons.checklist, Colors.blue),
-    Feature("Add Item", Icons.add_shopping_cart, Colors.green),
+    Feature("Add New Card", Icons.add_shopping_cart, Colors.green),
     Feature("Logout", Icons.logout, Colors.red),
   ];
 

@@ -1,8 +1,9 @@
+import 'package:bmo_inventory/screens/challenge.dart';
 import 'package:flutter/material.dart';
 import 'package:bmo_inventory/screens/menu.dart';
 // TODO: Impor halaman ShopFormPage jika sudah dibuat
 import 'package:bmo_inventory/screens/itemlist_form.dart';
-import 'package:bmo_inventory/screens/item_page.dart';
+import 'package:bmo_inventory/screens/list_card.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -57,7 +58,7 @@ class LeftDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.add_shopping_cart),
-            title: const Text('Add Item'),
+            title: const Text('Add New Card'),
             // Bagian redirection ke ShopFormPage
             onTap: () {
               /*
@@ -83,10 +84,37 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ItemPage(),
+                    builder: (context) => ProductPage(),
                   ));
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.checklist),
+            title: const Text('Challenge'),
+            // Bagian redirection ke ShopFormPage
+            onTap: () {
+              /*
+              TODO: Buatlah routing ke ShopFormPage di sini,
+              setelah halaman ShopFormPage sudah dibuat.
+              */
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChallengePage(),
+                  ));
+            },
+          ),
+          // ListTile(
+          //   leading: const Icon(Icons.shopping_basket),
+          //   title: const Text('Daftar Produk'),
+          //   onTap: () {
+          //     // Route menu ke halaman produk
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => const ProductPage()),
+          //     );
+          //   },
+          // ),
         ],
       ),
     );
